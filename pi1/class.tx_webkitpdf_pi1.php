@@ -239,6 +239,10 @@ class tx_webkitpdf_pi1 extends tslib_pibase {
 				
 		}
 
+		if($GLOBALS['TYPO3_CONF_VARS']['SYS']['curlProxyServer']) {
+			$options['--proxy'] = $GLOBALS['TYPO3_CONF_VARS']['SYS']['curlProxyServer'];
+		}
+
 		$userSettings = $this->readScriptSettings();
 		$options = array_merge($options, $userSettings);
 		
